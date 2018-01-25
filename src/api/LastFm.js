@@ -12,8 +12,13 @@ const headers = {
     'Content-Type': 'application/json'
 };
 
+const options = {
+    headers,
+    method: API_METHOD
+};
+
 export const request = (method, data) => {
-    return fetch(createEndPoint(method, data), {headers})
+    return fetch(createEndPoint(method, data), options)
         .then(checkStatus)
         .then(response => response.json());
 };

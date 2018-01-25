@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 import {getArtistInfo, searchArtist} from "../../services/ArtistService";
+
+import Header from '../common/header/Header';
+import Navigation from "../navigation/Navigation";
+import mainNavItems, { navBrandItem } from "../../navigations";
+import Main from '../main/main';
+
 import './App.css';
 
 class App extends Component {
@@ -24,10 +30,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.artists.map((item) => {
+            <div className='app'>
+                <Navigation items={mainNavItems} brandItem={navBrandItem} />
+                <Main />
+                {/*{this.state.artists.map((item) => {
                     return <li onClick={e => this.onArtistClick(item)}>{item.name}</li>
-                })}
+                })}*/}
             </div>
         );
     }
