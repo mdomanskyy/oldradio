@@ -1,8 +1,9 @@
 import React from 'react';
+import './Header.css';
 
 const Header = (props) => {
   return (
-      <header className="container">
+      <header className="header">
           {props.children}
       </header>
   );

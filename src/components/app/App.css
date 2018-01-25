@@ -1,2 +1,17 @@
 .app {
+
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(131deg, #787878, #587c9f, #5a8c43);
+  background-size: 600% 600%;
+  animation: AnimationName 26s ease infinite;
+
+  height: 100%;
+}
+
+@keyframes AnimationName {
+  0%{background-position:4% 0%}
+  50%{background-position:97% 100%}
+  100%{background-position:4% 0%}
 }

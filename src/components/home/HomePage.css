@@ -1,0 +1,23 @@
+.home {
+  flex: 1;
+}
+
+.home--title {
+  display: block;
+  text-align: center;
+
+  font-size: var(--size-ex-big);
+  color: var(--color-active);
+  padding: var(--padding);
+}
+
+.home--articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home--articles > * {
+  margin: 1em;
+}

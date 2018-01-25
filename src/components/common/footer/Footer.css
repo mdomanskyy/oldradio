@@ -1,0 +1,10 @@
+.footer {
+  padding: var(--padding);
+  background-color: var(--bg);
+}
+
+.footer--copy {
+  font-size: var(--size-small);
+  color: var(--color);
+  text-decoration: none;
+}

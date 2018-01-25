@@ -1,24 +1,35 @@
 :root {
   --color: #28a745;
   --color-active: #ffffff;
+  --color-text: #f5f5dc;
+
   --bg: #343a40;
+  --bg-l: #535a60;
 
   --size: 1em;
   --size-small: 0.8em;
   --size-big: 1.2em;
+  --size-ex-big: 1.6em;
+
+  --padding: 0.5em 1em;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-size: 18px;
 }
 
-body {
-  margin: 0;
+body { margin: 0;
   padding: 0;
   font-size: var(--size);
   font-family: 'Alegreya', serif;
+}
+
+html, body, #root {
+  height: 100%;
 }
