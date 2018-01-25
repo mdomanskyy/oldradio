@@ -1,0 +1,8 @@
+.button {
+  color: var(--color-active);
+  font-size: var(--size-big);
+
+  padding: var(--padding);
+  border: 1px solid var(--color);
+  background-color: var(--bg);
+}

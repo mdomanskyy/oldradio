@@ -1,6 +1,6 @@
 import HomePage from "../components/home/HomePage";
 import ArtistsPage from "../components/artists/ArtistsPage";
-import logo from '../assets/oldradio.png';
+import logo from '../assets/images/oldradio.png';
 
 const mainNavItems = [
   {path: '/', component:HomePage, name: 'Home', exact: true},

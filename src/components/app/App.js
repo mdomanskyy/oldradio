@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {getArtistInfo, searchArtist} from "../../services/ArtistService";
-
 import Navigation from "../navigation/Navigation";
 import mainNavItems, {navBrandItem} from "../../navigations";
 import Main from '../main/Main';
@@ -12,21 +10,6 @@ import Header from "../common/header/Header";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      artists: []
-    };
-  }
-
-  componentDidMount() {
-    searchArtist('as').then(artists => {
-      this.setState({
-        artists: artists
-      });
-    });
-  }
-
-  onArtistClick(item) {
-    getArtistInfo(item);
   }
 
   render() {
@@ -37,9 +20,6 @@ class App extends Component {
         </Header>
         <Main/>
         <Footer/>
-        {/*{this.state.artists.map((item) => {
-                    return <li onClick={e => this.onArtistClick(item)}>{item.name}</li>
-                })}*/}
       </div>
     );
   }

@@ -16,9 +16,8 @@ class Article extends React.Component {
       <article className="article">
         <h1 className="article--title">{title}</h1>
         <LinesEllipsis text={text}
-                       maxLine={3}
+                       maxLine={4}
                        ellipsis='...'
-                       trimRight
                        basedOn='letters'
                        className="article--text"/>
       </article>
