@@ -1,7 +1,3 @@
-:root {
-  --delay: 0.3s;
-}
-
 .navigation {
   display: flex;
   flex-direction: row;

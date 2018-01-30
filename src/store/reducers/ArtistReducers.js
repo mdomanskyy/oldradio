@@ -1,5 +1,5 @@
 import initialState from "../initialStore";
-import {SEARCH_ARTIST_SUCCESS} from "../../anctions/ActionTypes";
+import {SEARCH_ARTIST_SUCCESS} from "../../actions/ActionTypes";
 
 export function artists(state = initialState.artists, action) {
   switch (action.type) {

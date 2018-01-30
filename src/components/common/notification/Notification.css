@@ -1,0 +1,29 @@
+.notification {
+  position: relative;
+  font-size: var(--size);
+  padding: var(--padding);
+  color: var(--color-text);
+}
+
+.notification--btnClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+}
+
+.notification--btnClose:hover {
+  color: var(--color);
+  cursor: pointer;
+}
+
+.notification__error {
+  border: 1px solid var(--color-error);
+  background-color: var(--bg-error);
+}
+
+.notification__info {
+  border: 1px solid var(--color-info);
+  background-color: var(--bg-info);
+}
+

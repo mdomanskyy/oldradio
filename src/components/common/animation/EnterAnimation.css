@@ -1,0 +1,43 @@
+.TransitionX-enter {
+  opacity: 0;
+  transform: translateX(300px);
+}
+
+.TransitionX-enter.TransitionX-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 1s ease-out;
+}
+
+.TransitionX-leave {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.TransitionX-leave.TransitionX-leave-active {
+  opacity: 0.01;
+  transform: translateX(300px);
+  transition: all 1s ease-out;
+}
+
+.TransitionY-enter {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+
+.TransitionY-enter.TransitionY-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s ease-out;
+}
+
+.TransitionY-leave {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.TransitionY-leave.TransitionY-leave-active {
+  opacity: 0.01;
+  transform: translateY(-100px);
+  transition: all 1s ease-out;
+}

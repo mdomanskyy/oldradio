@@ -1,0 +1,19 @@
+.Fade-appear {
+  opacity: 0.01;
+}
+
+.Fade-appear.Fade-appear-active {
+  opacity: 1;
+  transition: all 2s ease-out;
+}
+
+.Rotate-appear {
+  opacity: 0.01;
+  transform: rotate(180deg);
+}
+
+.Rotate-appear.Rotate-appear-active {
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: all 2s ease-out;
+}

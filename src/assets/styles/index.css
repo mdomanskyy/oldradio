@@ -2,9 +2,14 @@
   --color: #28a745;
   --color-active: #ffffff;
   --color-text: #f5f5dc;
+  --color-error: rgba(255, 89, 42, 0.66);
+  --color-info: rgb(68, 176, 255);
 
   --bg: #343a40;
-  --bg-l: #535a60;
+  --bg-l: #40474d;
+  --bg-active: #005260;
+  --bg-error: rgba(255, 0, 0, 0.2);
+  --bg-info: rgba(0, 0, 255, 0.2);
 
   --size: 1em;
   --size-small: 0.8em;
@@ -12,6 +17,9 @@
   --size-ex-big: 1.6em;
 
   --padding: 0.5em 1em;
+
+  --delay: 0.3s;
+
 }
 
 * {

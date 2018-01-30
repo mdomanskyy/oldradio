@@ -7,7 +7,8 @@ export const searchArtist = (option) => ({
 
 export const searchArtistFailed = (err) => ({
   type: SEARCH_ARTIST_FAILED,
-  error: err
+  error: err,
+  message: 'Search request failed. Please try again later.'
 });
 
 export const searchArtistSuccess = (artists) => ({

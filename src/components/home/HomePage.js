@@ -1,11 +1,16 @@
 import React from 'react';
-
+import uuid4 from 'uuid';
 import Article from "../common/article/Article";
 
 import './HomePage.css';
+import {AppearAnimation} from "../common/animation/AppearAnimation";
 
 function renderArticle({title, text}) {
-  return <Article title={title} text={text}/>
+  return (
+    <AppearAnimation key={uuid4()} transitionName="Rotate">
+      <Article title={title} text={text}/>
+    </AppearAnimation>
+  );
 }
 
 class HomePage extends React.Component {
@@ -31,7 +36,9 @@ class HomePage extends React.Component {
     const {articles} = this.state;
     return (
       <section className="home">
-        <h2 className="home--title">Welcome to OldRadio</h2>
+       <AppearAnimation>
+         <h2 className="home--title">Welcome to OldRadio</h2>
+       </AppearAnimation>
         <section className="home--articles">
           {articles.map(renderArticle)}
         </section>

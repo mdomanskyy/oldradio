@@ -1,5 +1,6 @@
 const initialState = {
-  artists:[]
+  artists:[],
+  notifications:[]
 };
 
 export default initialState;

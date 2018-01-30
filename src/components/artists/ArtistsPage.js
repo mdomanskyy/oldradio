@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {searchArtist} from "../../anctions/ArtistActions";
-import SearchBox from "../common/SearchBox/SearchBox";
+import {searchArtist} from "../../actions/ArtistActions";
+import SearchBox from "../common/search/SearchBox";
 
 import './ArtistsPage.css';
 

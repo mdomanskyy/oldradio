@@ -1,0 +1,17 @@
+.notifications {
+  padding: var(--padding);
+  margin-left: auto;
+}
+
+.notification--indicator__error {
+  margin-left: 5px;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.notification--indicator__info {
+  margin-left: 5px;
+  color: var(--color-info);
+  border: 1px solid var(--color-info);
+}
+
