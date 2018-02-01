@@ -28,5 +28,6 @@
     "prop-types": "^15.6.0",
     "redux-devtools": "^3.4.1",
     "redux-devtools-extension": "^2.13.2"
-  }
+  },
+  "homepage": "https://oldradio.herokuapp.com/"
 }
