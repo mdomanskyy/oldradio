@@ -22,8 +22,7 @@ class ArtistInfoPage extends React.Component {
   render() {
     return (
       <section className="artistPage">
-        {JSON.stringify(this.props.artistInfo)}
-        <ArtistInfo artist={{name:'test'}}/>
+        <ArtistInfo artist={this.props.artistInfo}/>
       </section>
     );
   }
