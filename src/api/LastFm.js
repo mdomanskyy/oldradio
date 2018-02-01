@@ -1,6 +1,6 @@
 const API_METHOD = 'GET';
 const API_KEY = '94b1716df67d21bba7b4f1ba04cba8b5';
-const API_URL = 'http://ws.audioscrobbler.com/2.0/';
+const API_URL = 'https://ws.audioscrobbler.com/2.0/';
 const API_DATA_FORMAT = 'json';
 
 //methods
