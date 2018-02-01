@@ -8,7 +8,6 @@ import Popup from '../../common/pupup/Popup';
 import {removeNotification} from "../../../actions/NotificationAction";
 
 import './NotificationsContainer.css'
-import {AppearAnimation} from "../animation/AppearAnimation";
 import EnterAnimation from "../animation/EnterAnimation";
 
 

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Button from '../button/Button';
 import Input from '../input/Input';
 
+import './SearchBox.css';
+
 class SearchBox extends React.Component {
 
   constructor(props) {
@@ -33,8 +35,9 @@ class SearchBox extends React.Component {
   }
 
   render() {
+    let customClassName = this.props.className || '';
     return (
-      <div>
+      <div className={`searchBox ${customClassName}`}>
         <Input placeholder="Search artists"
                onChange={this.onSearchChange}
                onPressEnter={this.onSearchClick}/>
@@ -45,7 +48,8 @@ class SearchBox extends React.Component {
 }
 
 SearchBox.propTypes = {
-  searchOptionChange: PropTypes.func.isRequired
+  searchOptionChange: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
 
 export default SearchBox;

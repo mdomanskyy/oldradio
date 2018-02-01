@@ -1,8 +1,10 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
 
-import {SEARCH_ARTIST_REQUEST} from "../../actions/ActionTypes";
-import { searchArtist } from "../../services/ArtistService";
-import {searchArtistFailed, searchArtistSuccess} from "../../actions/ArtistActions";
+import {GET_ARTIST_INFO_REQUEST, SEARCH_ARTIST_REQUEST} from "../../actions/ActionTypes";
+
+import * as service from "../../services/ArtistService";
+
+import * as actions from "../../actions/ArtistActions";
 
 import serializeError from 'serialize-error';
 
@@ -12,12 +14,26 @@ function* watchSearchRequest() {
 
 function* requestSearch(action) {
   try {
-    const artists = yield call(searchArtist, action.option.name);
-    yield put(searchArtistSuccess(artists));
+    const artists = yield call(service.searchArtist, action.option.name);
+    yield put(actions.searchArtistSuccess(artists));
   } catch (err) {
     const serializedError = serializeError(err);
-    yield put(searchArtistFailed(serializedError));
+    yield put(actions.searchArtistFailed(serializedError));
   }
 }
 
-export {watchSearchRequest as watchArtistSearchRequest}
+function *watchArtistInfoRequest() {
+  yield takeEvery(GET_ARTIST_INFO_REQUEST, requestArtistInfo)
+}
+
+function *requestArtistInfo(action) {
+  try {
+    const artistInfo = yield call(service.getArtistInfo, action.option);
+    yield put(actions.getArtistInfoSuccess(artistInfo));
+  } catch(err) {
+    const serializedError = serializeError(err);
+    yield put(actions.getArtistInfoFailed(err, err.message));
+  }
+}
+
+export {watchSearchRequest as watchArtistSearchRequest, watchArtistInfoRequest}

@@ -23,7 +23,7 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin: 0;
   padding: 0;
 }
@@ -38,6 +38,10 @@ body { margin: 0;
   font-family: 'Alegreya', serif;
 }
 
-html, body, #root {
+html, body, #rootLayer {
   height: 100%;
+}
+
+#popupLayer {
+  z-index: 999;
 }

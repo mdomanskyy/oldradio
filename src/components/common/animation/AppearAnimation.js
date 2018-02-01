@@ -8,7 +8,7 @@ export const AppearAnimation = ({children, transitionName = 'Fade'}) => {
     <CSSTransitionGroup
       transitionName={transitionName}
       transitionAppear={true}
-      transitionAppearTimeout={5000}
+      transitionAppearTimeout={2000}
       transitionEnter={false}
       transitionLeave={false}>
       {children}

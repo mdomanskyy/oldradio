@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import PropTypes from 'prop-types';
 
 import './Popup.css';
@@ -44,12 +46,14 @@ class Popup extends React.Component {
 
   render() {
     const { position } = this.state;
-    return (
+    return ReactDOM.createPortal (
         <div ref={(ref) => this.contentRef = ref}
              style={position}
              className="popup">
           {this.props.children}
         </div>
+      ,
+      document.getElementById("popupLayer")
     );
   }
 }

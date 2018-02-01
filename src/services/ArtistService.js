@@ -15,7 +15,12 @@ export function searchArtist(name) {
 export function getArtistInfo({name, mbid}) {
   return LastFM.request(LastFM.ARTIST_GETINFO, {artist: name, mbid})
     .then(info => {
+      const {error} = info;
+      if (error) {
+        throw new Error(`Code ${error}: ${info.message}`);
+      }
       console.log(info);
+      return info.artist;
     }).catch(err => {
       console.log(err);
       throw new Error(err.message);

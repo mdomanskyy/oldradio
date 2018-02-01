@@ -6,8 +6,8 @@ const EnterAnimation = ({children, transitionName = 'TransitionX'}) => {
   return (
     <CSSTransitionGroup transitionName={transitionName}
                         transitionAppear={false}
-                        transitionEnterTimeout={1000}
-                        transitionLeaveTimeout={1000}
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={500}
                         transitionEnter={true}
                         transitionLeave={true}>
       {children}

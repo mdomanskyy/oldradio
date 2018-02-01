@@ -1,9 +1,13 @@
-import { call } from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
 
-import {watchArtistSearchRequest} from './ArtistSagas';
+import {watchArtistSearchRequest, watchArtistInfoRequest} from './ArtistSagas';
 
 function* rootSaga() {
-  yield call(watchArtistSearchRequest)
+  yield all(
+    [
+      watchArtistSearchRequest(),
+      watchArtistInfoRequest()
+    ]);
 }
 
 export default rootSaga;

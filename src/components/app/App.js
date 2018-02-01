@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Navigation from "../navigation/Navigation";
-import mainNavItems, {navBrandItem} from "../../navigations";
+import Navigation from "../common/navigation/Navigation";
+import mainNavItems, {navBrandItem, visibleNavItems} from "../../navigations";
 import Main from '../main/Main';
 import Footer from '../common/footer/Footer';
 import Header from "../common/header/Header";
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Header>
-          <Navigation items={mainNavItems} brandItem={navBrandItem}/>
+          <Navigation items={visibleNavItems()} brandItem={navBrandItem}/>
           <NotificationsContainer />
         </Header>
         <Main/>
