@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navigation from "../common/navigation/Navigation";
-import mainNavItems, {navBrandItem, visibleNavItems} from "../../navigations";
+import {navBrandItem, visibleNavItems} from "../../navigations";
 import Main from '../main/Main';
 import Footer from '../common/footer/Footer';
 import Header from "../common/header/Header";

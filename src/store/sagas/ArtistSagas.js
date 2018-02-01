@@ -32,7 +32,7 @@ function *requestArtistInfo(action) {
     yield put(actions.getArtistInfoSuccess(artistInfo));
   } catch(err) {
     const serializedError = serializeError(err);
-    yield put(actions.getArtistInfoFailed(err, err.message));
+    yield put(actions.getArtistInfoFailed(serializedError, err.message));
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 import {searchArtist} from "../../actions/ArtistActions";
 import SearchBox from "../common/search/SearchBox";
@@ -15,7 +16,7 @@ class ArtistsPage extends React.Component {
   }
 
   onSearchOptionChange(option) {
-    this.props.dispatch(searchArtist(option));
+    this.props.searchArtist(option);
   }
 
   onArtistSelect({mbid}) {
@@ -40,4 +41,8 @@ const mapStateToProps = (state, ownProps) => ({
   artists: state.artists
 });
 
-export default connect(mapStateToProps)(ArtistsPage);
+const mapDispatchToProps = (dispatch) => ({
+  searchArtist: bindActionCreators(searchArtist, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistsPage);

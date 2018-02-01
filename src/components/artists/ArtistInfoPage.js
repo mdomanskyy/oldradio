@@ -1,4 +1,6 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
+
 import {withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -7,13 +9,14 @@ import ArtistInfo from "./info/ArtistInfo";
 import { getArtistInfo } from "../../actions/ArtistActions";
 
 class ArtistInfoPage extends React.Component {
+
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
     const {match:{params:{id:mbid}}} = this.props;
-    this.props.dispatch(getArtistInfo({mbid}));
+    this.props.getArtistInfo({mbid});
   }
 
   render() {
@@ -32,5 +35,9 @@ const mapStateToProps = (state) => {
   }
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  getArtistInfo: bindActionCreators(getArtistInfo, dispatch)
+});
 
-export default withRouter(connect(mapStateToProps)(ArtistInfoPage));
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ArtistInfoPage));

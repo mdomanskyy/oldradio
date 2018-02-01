@@ -1,4 +1,5 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Notification} from "./Notification";
 import {ERROR, INFO} from "./index";
@@ -43,7 +44,7 @@ class NotificationsContainer extends React.Component {
   }
 
   onNotificationClose(id) {
-    this.props.dispatch(removeNotification(id));
+    this.props.removeNotification(id);
   }
 
   renderNotificationItems({type, message, id}) {
@@ -105,4 +106,8 @@ const mapStateToProps = (state) => ({
   infos: selectNotificationsByType(state, INFO)
 });
 
-export default connect(mapStateToProps)(NotificationsContainer);
+const mapDispatchToPros = (dispatch) => ({
+  removeNotification: bindActionCreators(removeNotification, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToPros)(NotificationsContainer);
