@@ -28,6 +28,16 @@
   padding: 0;
 }
 
+h2, h3 {
+  color: var(--color-active);
+  padding: var(--padding);
+  margin: 0;
+}
+
+h2, h3, ul {
+  margin: 0;
+}
+
 html {
   font-size: 18px;
 }

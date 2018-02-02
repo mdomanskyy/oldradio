@@ -1,5 +1,31 @@
 .artistInfo {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
   padding: var(--padding);
+}
+
+.artistInfo--main {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .artistInfo--main {
+    flex-direction: column;
+  }
+  .artistInfo--summary {
+    max-width: 400px!important;
+  }
+}
+
+.artistInfo--published {
+  color: var(--color-text);
+  font-style: italic;
+  font-size: var(--size-small);
+}
+
+.artistInfo--summary {
+  max-width: 600px!important;
 }

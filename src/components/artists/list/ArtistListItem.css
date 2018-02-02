@@ -12,6 +12,11 @@
   transition: all 0.5s ease-in-out;
 }
 
+.artistItem__disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .artistItem--image {
   width: 200px;
 }

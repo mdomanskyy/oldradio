@@ -1,0 +1,28 @@
+.tag--title {
+  color: var(--color-info);
+  padding: 0.2em;
+}
+
+.tag--list {
+  padding: 0.2em!important;
+}
+
+.tag--item {
+  color: var(--color-info);
+  border: 1px solid var(--color-info);
+  background-color: var(--bg);
+}
+
+.tag--item:hover {
+  background-color: var(--bg-l);
+}
+
+.tag--item a{
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.tag--item a:hover {
+  color: var(--color-active);
+  text-decoration: none;
+}

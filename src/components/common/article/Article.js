@@ -11,12 +11,12 @@ class Article extends React.Component {
   }
 
   render() {
-    const {title, text} = this.props;
+    const {title, text, maxLine = 4, className} = this.props;
     return (
-      <article className="article">
+      <article className={`article ${className}`}>
         <h1 className="article--title">{title}</h1>
         <LinesEllipsis text={text}
-                       maxLine={4}
+                       maxLine={maxLine}
                        ellipsis='...'
                        basedOn='letters'
                        className="article--text"/>
@@ -27,7 +27,9 @@ class Article extends React.Component {
 
 Article.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  maxLine: PropTypes.number
 };
 
 export default Article;

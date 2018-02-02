@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  padding: 1em;
+}
+.list__b {
+  position: relative;
+}
+.list__h {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list__v {
+  flex-direction: column;
+}
+
+.list--item {
+  padding: var(--padding);
+}
+
+.list__b .list--item {
+  position: absolute;
+}
+
+.list__h .list--item {
+  position: static;
+}
+
+.list__v .list--item {
+  position: static;
+}
+
+

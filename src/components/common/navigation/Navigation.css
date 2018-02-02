@@ -9,6 +9,13 @@
   font-size: var(--size);
 }
 
+@media screen and (max-width: 500px) {
+  .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .navigation--item {
   display: flex;
   align-items: center;
