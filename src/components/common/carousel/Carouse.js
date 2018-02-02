@@ -1,24 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import uuid4 from 'uuid/v4';
 
 import {Carousel as BSCarousel} from 'react-bootstrap';
 
-const renderItem = ({image, title, text}) => {
+const CaptionRenderBase = ({data}) => {
   return (
-    <BSCarousel.Item>
+    <React.Fragment>
+      <h3>{data.title}</h3>
+      <p>{data.text}</p>
+    </React.Fragment>
+  );
+};
+
+const renderItem = (data, captionClass, CaptionRenderer) => {
+  const {image, title, text} = data;
+  return (
+    <BSCarousel.Item key={uuid4()}>
       <img alt={title} src={image}/>
-      <BSCarousel.Caption>
-        <h3>{title}</h3>
-        <p><a target="_blank" href={text}>{'More Info'}</a></p>
+      <BSCarousel.Caption className={captionClass}>
+        <CaptionRenderer data={data} />
       </BSCarousel.Caption>
     </BSCarousel.Item>
   );
 };
 
-const Carousel = ({items}) => {
+const Carousel = ({items, captionClass, captionRender = CaptionRenderBase, ...bsProps}) => {
   return (
-    <BSCarousel>
-      {items.map(renderItem)}
+    <BSCarousel {...bsProps}>
+      {items.map(item=>renderItem(item, captionClass, captionRender))}
     </BSCarousel>
   );
 };
@@ -28,7 +38,9 @@ Carousel.propTypes = {
     image: PropTypes.string.isRequired,
     title: PropTypes.string,
     text: PropTypes.string
-  })).isRequired
+  })).isRequired,
+  captionRender: PropTypes.func,
+  captionClass: PropTypes.string
 };
 
 export default Carousel;

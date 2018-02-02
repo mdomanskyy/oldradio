@@ -1,4 +1,5 @@
 .button {
+  font: initial;
   color: var(--color-active);
   font-size: var(--size-big);
 
